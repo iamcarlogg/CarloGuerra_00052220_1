@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "SemanticModel",
-    "displayName": "Ejercicio1"
+    "type": "Report",
+    "displayName": "CarloGuerra_00052220"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "8151256d-4dbe-4d03-8e73-9b43a410e368"
+    "logicalId": "18f4e6b9-f742-4a66-bb16-a78e864e05b4"
   }
 }

@@ -36,7 +36,7 @@ relationship AutoDetected_70ee7df7-057a-4929-bddd-3ae4fbbce1b8
 	fromColumn: Fact_Ventas.Vendedor
 	toColumn: Dim_Vendedor.ID_Vendedor
 
-relationship 300934a9-2744-d040-4e84-ec6d0b7602b9
+relationship 7e4faaca-f004-9275-f7b0-ffe8911bf980
 	crossFilteringBehavior: bothDirections
 	fromCardinality: one
 	fromColumn: dim_vehiculo.id_vehiculo
