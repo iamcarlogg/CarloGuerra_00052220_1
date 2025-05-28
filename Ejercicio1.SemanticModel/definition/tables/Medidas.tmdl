@@ -1,0 +1,37 @@
+table Medidas
+	lineageTag: 7540db40-aa83-4427-9c5b-0b279a3fc84a
+
+	measure 'Total Ventas' = COUNTROWS(Fact_Ventas)
+		formatString: 0
+		lineageTag: 3a0b2dd2-2779-4381-97f9-4b7ccbb68eb8
+
+	measure 'Precio Promedio' = AVERAGE(Fact_Ventas[PrecioTotal])
+		lineageTag: b70a7607-ec91-4173-9673-cacca269a7d0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ingresos Totales' =
+			SUMX(
+			    Fact_Ventas,
+			    (Fact_Ventas[PrecioTotal]-Fact_Ventas[Costo Vehículo]))
+		lineageTag: 60b85b1e-db78-4250-bd48-49e3ede6f0bd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		formatString: 0
+		lineageTag: b496635a-b81a-46f5-af69-b0e7c4bcd7c9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 5ab91d7089c34a1ca6656649a032e263
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+
